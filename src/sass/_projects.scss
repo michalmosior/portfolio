@@ -1,0 +1,255 @@
+.projects {
+	//background-color: #272732;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(
+		to right,
+		rgb(15, 32, 39),
+		rgb(32, 58, 67),
+		rgb(44, 83, 100)
+	);
+	&__container {
+		max-width: 1100px;
+	}
+	&__title {
+		font-size: 3rem;
+		font-weight: 400;
+		margin-bottom: 1em;
+		color: #e9edf0;
+		&--span {
+			font-weight: 900;
+			color: #2e85c8;
+		}
+	}
+	&__cards {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	font-size: 3rem;
+	color: #e9edf0;
+	width: 90%;
+
+	border-radius: 10px;
+	background-color: transparent;
+	margin-bottom: 2em;
+	-webkit-box-shadow: 3px 3px 19px -13px #f7f7f7;
+	-moz-box-shadow: 3px 3px 19px -13px #f7f7f7;
+	box-shadow: 3px 3px 19px -13px #f7f7f7;
+	padding: 6% 3%;
+	overflow: hidden;
+	transform: translateX(-15%);
+	opacity: 0;
+	animation-delay: 0.4s;
+	&__hidden {
+		font-size: 0.8em;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		opacity: 0;
+		background-color: rgb(15, 32, 39);
+		transition: transform 0.3s, opacity 0.8s;
+		transform: translateY(-100%);
+
+		padding: 10%;
+		height: 65%;
+		&-text {
+			line-height: 2em;
+		}
+	}
+	&__title {
+		font-size: 1.2em;
+		font-weight: 400;
+		margin-bottom: 0.6em;
+		text-transform: uppercase;
+	}
+	&__imagebox {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 2em;
+	}
+	&__image {
+		max-width: 100%;
+		filter: drop-shadow(1px 1px 3px rgb(103, 102, 102));
+	}
+	&__tagsbox {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		text-transform: uppercase;
+		margin-bottom: 1em;
+	}
+	&__tags {
+		font-size: 1em;
+		display: flex;
+		flex-direction: row;
+		width: 60%;
+		justify-content: space-between;
+	}
+	&__info-btn {
+		position: relative;
+		height: 3em;
+		background-color: transparent;
+		outline: none;
+		border: none;
+		color: #e9edf0;
+		cursor: pointer;
+	}
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 65%;
+	}
+	&__button {
+		font-size: 0.8em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #e9edf0;
+		border: solid 1px #e9edf0;
+		border-radius: 3px;
+		padding: 0.4em 1em;
+		cursor: pointer;
+		transition: background-color 0.3s, color 0.3s;
+		&:hover {
+			background-color: #f6f6f7;
+			color: #272732;
+		}
+		&--code {
+			background-color: #2e85c8;
+			color: #e9edf0;
+			border-color: #2e85c8;
+			&:hover {
+				background-color: #429bdf;
+			}
+		}
+	}
+}
+@media screen and (min-width: 375px) {
+	.card {
+		&__buttons {
+			width: 55%;
+		}
+	}
+}
+@media screen and (min-width: 576px) {
+	.projects {
+		&__title {
+			font-size: 5rem;
+		}
+	}
+	.card {
+		font-size: 4rem;
+		width: 80%;
+		&__imagebox {
+			height: 350px;
+		}
+		&__buttons {
+			width: 55%;
+		}
+		&__tags {
+			width: 45%;
+		}
+	}
+}
+@media screen and (min-width: 768px) {
+	.projects {
+		&__title {
+			font-size: 5rem;
+		}
+	}
+	.card {
+		font-size: 5rem;
+		&__hidden {
+			height: 365px;
+		}
+		&__buttons {
+			width: 50%;
+		}
+		&__tags {
+			width: 45%;
+		}
+	}
+}
+@media screen and (min-width: 1024px) {
+	.projects {
+		&__cards {
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+	}
+	.card {
+		font-size: 3.6rem;
+		width: 45%;
+		&:nth-of-type(2) {
+			animation-delay: 0.2s;
+		}
+		&:nth-of-type(3) {
+			animation-delay: 0.4s;
+		}
+		&:nth-of-type(4) {
+			animation-delay: 0.6s;
+		}
+		&__imagebox {
+			width: 100%;
+		}
+		&__info-btn {
+			&:hover::after {
+				transform: scale(1);
+			}
+			&::after {
+				position: absolute;
+				content: '';
+				bottom: 10px;
+				width: 70%;
+				left: 15%;
+				height: 3px;
+				transform: scale(0);
+				transform-origin: center;
+				background-color: #2e85c8;
+				transition: transform 0.3s;
+			}
+		}
+		&__image {
+			object-fit: contain;
+		}
+		&__tagsbox {
+			width: 100%;
+		}
+		&__tags {
+			width: 50%;
+		}
+		&__buttons {
+			width: 50%;
+		}
+	}
+}
+@media screen and (min-width: 1280px) {
+	.projects {
+		&__title {
+			margin-bottom: 2em;
+		}
+	}
+	.card {
+		font-size: 4rem;
+		width: 45%;
+	}
+}
+.show {
+	opacity: 0.9;
+	transform: translate(0);
+}
